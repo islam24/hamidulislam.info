@@ -1,0 +1,27 @@
+
+backend:
+  name: github
+  repo: your-username/hamidulislam.info
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "career"
+    label: "Career Page"
+    files:
+      - file: "career.html"
+        label: "Career Section"
+        name: "career"
+        fields:
+          - {label: "Content", name: "body", widget: "markdown"}
